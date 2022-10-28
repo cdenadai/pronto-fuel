@@ -10,7 +10,7 @@
     "
   >
     <!-- tw-bg-gray-100 -->
-    <div class="tw-w-full tw-max-w-md">
+    <div class="tw-w-full tw-max-w-lg">
       <FadeTransition>
         <slot />
       </FadeTransition>

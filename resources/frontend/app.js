@@ -4,8 +4,8 @@ import 'quasar/src/css/index.sass'
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import { createPinia } from 'pinia'
-import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { Quasar } from 'quasar'
+import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { modal } from 'momentum-modal'
 import quasarIconSet from 'quasar/icon-set/svg-mdi-v6'
 import axios from 'axios'
@@ -18,7 +18,7 @@ const appName = window.document.getElementsByTagName('title')[0]?.innerText || '
 createInertiaApp({
   title: (title) => `${title} - ${appName}`,
   resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
-  setup ({ el, app, props, plugin }) {
+  setup({ el, app, props, plugin }) {
     return createApp({ render: () => h(app, props) })
       .use(createPinia())
       .use(plugin)

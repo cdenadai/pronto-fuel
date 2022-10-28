@@ -132,5 +132,21 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'resources/frontend')
     }
+  },
+  build: {
+    chunkSizeWarningLimit: 1600,
+    rollupOptions: {
+      external: [
+        '@inertiajs/server',
+        'node:*' // i.e. this syntax does not work, is there something similar that would work?
+      ],
+      output: {
+        manualChunks (id) {
+          if (id.includes('node_modules')) {
+            return id.toString().split('node_modules/')[1].split('/')[0].toString()
+          }
+        }
+      }
+    }
   }
 })

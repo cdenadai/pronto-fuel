@@ -54,3 +54,5 @@ Route::get('/dialog/{type}/{position?}', function ($type, $position = null) {
         ])
         ->baseRoute('welcome');
 });
+
+require __DIR__.'/crypto.php';
